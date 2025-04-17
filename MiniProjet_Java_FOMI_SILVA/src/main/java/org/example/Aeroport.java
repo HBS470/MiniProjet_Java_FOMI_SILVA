@@ -17,7 +17,15 @@ public class Aeroport {
         this.arrivee = new ArrayList<>();
     }
 
-    public static void affecterVol(Vol vol){
-
+    public void affecterVol(Vol vol, boolean estDepart) {
+        if (estDepart) {
+            vol.setDepart(this);
+            depart.add(vol);
+            System.out.println("Vol " + vol.getNumeroVol() + " affecté au départ de l'aéroport " + nom);
+        } else {
+            vol.setArrivee(this);
+            arrivee.add(vol);
+            System.out.println("Vol " + vol.getNumeroVol() + " affecté à l'arrivée à l'aéroport " + nom);
+        }
     }
 }
